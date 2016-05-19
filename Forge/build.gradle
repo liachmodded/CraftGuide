@@ -1,0 +1,15 @@
+apply plugin: 'net.minecraftforge.gradle.forge'
+
+task apiJar(type: Jar) {
+    from (sourceSets.main.output) {
+        include 'uristqwerty/CraftGuide/api/**'
+    }
+    from (sourceSets.main.allJava) {
+        include 'uristqwerty/CraftGuide/api/**'
+    }
+    classifier = 'api'
+}
+
+artifacts {
+    archives apiJar
+}
